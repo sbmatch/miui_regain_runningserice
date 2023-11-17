@@ -32,7 +32,6 @@ public class MainHook implements IXposedHookLoadPackage{
                 XposedBridge.hookAllMethods(clz, "isValidFragment", new XC_MethodHook() {
                     @Override
                     protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                        XposedBridge.log("碎片有效 --> "+param.args[0]);
                         hook();
                     }
                 });
