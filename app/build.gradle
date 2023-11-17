@@ -3,20 +3,20 @@ plugins {
 }
 
 android {
-    namespace 'com.ma.bitchgiveitback'
-    compileSdk 33
+    namespace 'com.ma.bitchgiveitbackrunningservices'
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.ma.bitchgiveitbackrunningservices"
-        minSdk 30
-        targetSdk 33
+        minSdk 28
+        targetSdk 34
         versionCode 1
         versionName "1.0"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -44,12 +44,8 @@ android {
 
 dependencies {
 
-//    implementation 'dev.rikka.rikkax.preference:simplemenu-preference:1.0.3'
-//    implementation 'androidx.preference:preference:1.2.1'
-//    implementation 'androidx.fragment:fragment:1.6.2'
     compileOnly 'de.robv.android.xposed:api:82'
-//    runtimeOnly 'org.jetbrains.kotlin:kotlin-stdlib:1.8.20'
-//    runtimeOnly 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20'
+    runtimeOnly 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0'
     implementation 'org.lsposed.hiddenapibypass:hiddenapibypass:4.3'
-    implementation("com.github.kyuubiran:EzXHelper:2.0.8")
+    implementation 'com.github.kyuubiran:EzXHelper:2.0.8'
 }
