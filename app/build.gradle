@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.ma.bitchgiveitback'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.ma.bitchgiveitbackrunningservices"
+        minSdk 30
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        aidl true
+        buildConfig = true
+    }
+
+
+    applicationVariants.all { variant ->
+        // 遍历所有的变体
+        variant.outputs.all {
+            // 获取应用的版本名
+            def versionName = variant.versionName
+            // 设置输出文件名
+            outputFileName = "${applicationId}_v${versionName}.apk"
+        }
+    }
+}
+
+dependencies {
+
+//    implementation 'dev.rikka.rikkax.preference:simplemenu-preference:1.0.3'
+//    implementation 'androidx.preference:preference:1.2.1'
+//    implementation 'androidx.fragment:fragment:1.6.2'
+    compileOnly 'de.robv.android.xposed:api:82'
+//    runtimeOnly 'org.jetbrains.kotlin:kotlin-stdlib:1.8.20'
+//    runtimeOnly 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20'
+    implementation 'org.lsposed.hiddenapibypass:hiddenapibypass:4.3'
+    implementation("com.github.kyuubiran:EzXHelper:2.0.8")
+}
